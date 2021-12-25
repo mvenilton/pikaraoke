@@ -172,8 +172,8 @@ class Karaoke:
 
         self.generate_qr_code()
         if self.use_vlc:
-            if (self.show_overlay):
-                self.vlcclient = vlcclient.VLCClient(port=self.vlc_port, path=self.vlc_path, qrcode=self.qr_code_path, url=self.url)
+            if self.show_overlay:
+                self.vlcclient = vlcclient.VLCClient(port=self.vlc_port, path=self.vlc_path, qrcode=self.qr_code_path, url=None if self.hide_ip else self.url)
             else: 
                 self.vlcclient = vlcclient.VLCClient(port=self.vlc_port, path=self.vlc_path)
         else:
@@ -342,27 +342,30 @@ class Karaoke:
 
             blitY = self.screen.get_rect().bottomleft[1] - 40
 
-            if not self.hide_ip:
-                p_image = pygame.image.load(self.qr_code_path)
-                p_image = pygame.transform.scale(p_image, (150, 150))
-                self.screen.blit(p_image, (20, blitY - 125))
-                if not self.is_network_connected():
-                    text = self.font.render(
-                        "Wifi/Network not connected. Shutting down in 10s...",
-                        True,
-                        (255, 255, 255),
-                    )
-                    self.screen.blit(text, (p_image.get_width() + 35, blitY))
-                    time.sleep(10)
-                    logging.info(
-                        "No IP found. Network/Wifi configuration required. For wifi config, try: sudo raspi-config or the desktop GUI: startx"
-                    )
-                    self.stop()
-                else:
+            #if not self.hide_ip:
+            p_image = pygame.image.load(self.qr_code_path)
+            p_image = pygame.transform.scale(p_image, (150, 150))
+            self.screen.blit(p_image, (20, blitY - 125))
+            if not self.is_network_connected():
+                text = self.font.render(
+                    "Wifi/Network not connected. Shutting down in 10s...",
+                    True,
+                    (255, 255, 255),
+                )
+                self.screen.blit(text, (p_image.get_width() + 35, blitY))
+                time.sleep(10)
+                logging.info(
+                    "No IP found. Network/Wifi configuration required. For wifi config, try: sudo raspi-config or the desktop GUI: startx"
+                )
+                self.stop()
+            else:
+                if not self.hide_ip:
                     text = self.font.render(
                         "Connect at: " + self.url, True, (255, 255, 255)
                     )
-                    self.screen.blit(text, (p_image.get_width() + 35, blitY))
+                else:
+                    text = self.font.render("", True, (255, 255, 255))
+                self.screen.blit(text, (p_image.get_width() + 35, blitY))
 
             if not self.hide_raspiwifi_instructions and (
                 self.raspi_wifi_config_installed

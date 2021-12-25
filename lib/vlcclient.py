@@ -86,7 +86,7 @@ class VLCClient:
                 "--macosx-continue-playback",
                 "0",
             ]
-        if self.qrcode and self.url:
+        if self.qrcode:# and self.url:
             self.cmd_base += self.get_marquee_cmd()
 
         logging.info("VLC command base: " + " ".join(self.cmd_base))
@@ -95,7 +95,10 @@ class VLCClient:
         self.process = None
     
     def get_marquee_cmd(self):
-        return ["--sub-source", 'logo{file=%s,position=9,x=2,opacity=200}:marq{marquee="Pikaraoke - connect at: \n%s",position=9,x=38,color=0xFFFFFF,size=11,opacity=200}' % (self.qrcode, self.url)]
+        marquee_text = '\n'
+        if self.url:
+            marquee_text = f'Pikaraoke - connect at: \n{self.url}'
+        return ["--sub-source", 'logo{file=%s,position=9,x=2,opacity=200}:marq{marquee="%s",position=9,x=38,color=0xFFFFFF,size=11,opacity=200}' % (self.qrcode, marquee_text)]
 
     def handle_zipped_cdg(self, file_path):
         extracted_dir = os.path.join(self.tmp_dir, "extracted")
