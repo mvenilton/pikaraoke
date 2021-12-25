@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.1.1\n"
+"Project-Id-Version:  1.1.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-07 23:39-0500\n"
+"POT-Creation-Date: 2021-12-25 18:31-0300\n"
 "PO-Revision-Date: 2021-12-24 17:55-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt_BR\n"
@@ -18,20 +18,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
+#: app.py:82
+#, fuzzy
+msgid "semitones"
+msgstr "semitons"
+
 #. Message shown after logging in as admin successfully
-#: app.py:94
+#: app.py:95
 msgid "Admin mode granted!"
 msgstr "Modo de administrador concedido!"
 
 #. Message shown after failing to login as admin
-#: app.py:98
+#: app.py:99
 msgid "Incorrect admin password!"
 msgstr "Senha de administrador incorreta"
 
 #. Title of the files page.
 #. Navigation link for the page where the user can add existing songs to the
 #. queue.
-#: app.py:325 templates/base.html:158
+#: app.py:326 templates/base.html:158
 msgid "Browse"
 msgstr "Procurar"
 
@@ -42,8 +47,8 @@ msgid ""
 "Do you want to change the name of the person using this device? This will"
 " show up on queued songs. Current: %(currentUser)s"
 msgstr ""
-"Quer mudar o nome do usuario desse navegador? Isso vai"
-" aparecer na fila de músicas. Atual: %(currentUser)s"
+"Quer mudar o nome do usuario desse navegador? Isso vai aparecer na fila "
+"de músicas. Atual: %(currentUser)s"
 
 #. Navigation link for the home page.
 #: templates/base.html:142
@@ -108,8 +113,8 @@ msgid ""
 "Please enter your name. This will show up next to the songs you queue up "
 "from this device."
 msgstr ""
-"Digite seu nome. Ele irá aparecerá ao lado das músicas que você adicionou na fila 
-"nesse dispositivo."
+"Digite seu nome. Ele irá aparecerá ao lado das músicas que você adicionou"
+" na filnesse dispositivo."
 
 #. Notification when a song gets added to the queue.  The song name comes after
 #. this string.
@@ -166,6 +171,8 @@ msgid ""
 "Are you sure you want to skip this track? If you didn't add this song, "
 "ask permission first!"
 msgstr ""
+"Tem certeza que deseja pular esta faixa? Se não foi você que adicionou esta música, "
+"peça permissão primeiro!"
 
 #. Header showing the currently playing song.
 #: templates/home.html:143
