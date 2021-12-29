@@ -47,8 +47,8 @@ msgid ""
 "Do you want to change the name of the person using this device? This will"
 " show up on queued songs. Current: %(currentUser)s"
 msgstr ""
-"Quer mudar o nome do usuario desse navegador? Isso vai aparecer na fila "
-"de músicas. Atual: %(currentUser)s"
+"Quer mudar o nome do usuario desse navegador? Isso vai aparecer na fila"
+" de músicas. Atual: %(currentUser)s"
 
 #. Navigation link for the home page.
 #: templates/base.html:142
@@ -192,7 +192,7 @@ msgstr "Controle"
 #. Title attribute on the button to restart the current song.
 #: templates/home.html:168
 msgid "Restart Song"
-msgstr ""
+msgstr "Recomeçar Música"
 
 #. Title attribute on the button to play or pause the current song.
 #: templates/home.html:171
@@ -202,17 +202,17 @@ msgstr ""
 #. Title attribute on the button to skip to the next song.
 #: templates/home.html:174
 msgid "Stop Current Song"
-msgstr ""
+msgstr "Parar"
 
 #. Title attribute on the button to adjust volume down.
 #: templates/home.html:178
 msgid "Volume Down"
-msgstr ""
+msgstr "Diminuir Volume"
 
 #. Title attribute on the button to adjust volume up.
 #: templates/home.html:182
 msgid "Volume Up"
-msgstr ""
+msgstr "Aumentar Volume"
 
 #. Title of a control to change the key/pitch of the playing song.
 #: templates/home.html:193
@@ -222,7 +222,7 @@ msgstr "Mudar Tom"
 #. Label on the button to confirm the change in key/pitch of the playing song.
 #: templates/home.html:220
 msgid "Change"
-msgstr ""
+msgstr "Mudar"
 
 #. Confirmation text whe the user selects quit.
 #: templates/info.html:7
@@ -456,7 +456,7 @@ msgstr ""
 #. The button adds it to the queue.
 #: templates/search.html:297
 msgid "Add to queue"
-msgstr ""
+msgstr "Adicionar a fila"
 
 #. Checkbox label which enables more options when searching.
 #: templates/search.html:306
