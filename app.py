@@ -78,8 +78,7 @@ def home():
         title="Home",
         show_transpose=k.use_vlc,
         transpose_value=k.now_playing_transpose,
-        admin=is_admin(),
-        semitones_txt = _("semitones")
+        admin=is_admin()
     )
 
 @app.route("/auth", methods=["POST"])

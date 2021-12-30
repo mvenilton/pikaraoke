@@ -1,10 +1,12 @@
 {% extends 'base.html' %} {% block scripts %}
 <script>
   function getSemitonesLabel(value) {
+    var semitones_output = `{# MSG: Label for display of how many semitones the song has been shifted. #}{{ _('semitones') }}`
+    
     if (value > 0) {
-      return "+" + value + " {{semitones_txt}}";
+      return "+" + value + semitones_output;
     } else {
-      return value + " {{semitones_txt}}";
+      return value + semitones_output;
     }
   }
 
@@ -35,8 +37,7 @@
           $("#up-next").html(`<p style="margin-bottom: 5px">${obj.up_next}</p>
             <p class="has-text-success">
               {# MSG: Title text for the icon marking the next person to sing. #}
-              <i class="icon icon-mic-1" title="{{ _('Next singer') }}"><
-                /i>${obj.next_user}</p>`);
+              <i class="icon icon-mic-1" title="{{ _('Next singer') }}"></i>${obj.next_user}</p>`);
         } else {
           // {# MSG: Alternative text for the "Up next" section if no more songs are queued up. #}
           $("#up-next").html("{{ _('No song is queued.') }}");

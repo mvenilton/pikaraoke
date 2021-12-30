@@ -11,6 +11,6 @@ pygame==2.0.1; sys_platform == 'win32'
 psutil 
 unidecode
 requests
-flask-paginate
+flask-paginate==2021.10.29
 Babel==2.9.1
 Flask-Babel==2.0.0

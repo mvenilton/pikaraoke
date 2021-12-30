@@ -8,6 +8,7 @@ import subprocess
 import sys
 import threading
 import time
+import gettext
 from io import BytesIO
 from subprocess import check_output
 from pathlib import Path
@@ -15,13 +16,13 @@ from pathlib import Path
 import pygame
 import qrcode
 from unidecode import unidecode
+from constants import COLORS
 
 from lib import omxclient, vlcclient
 from lib.get_platform import get_platform
 
 if get_platform() != "windows":
     from signal import SIGALRM, alarm, signal
-
 
 class Karaoke:
 
@@ -162,6 +163,8 @@ class Karaoke:
 
         self.url = "http://%s:%s" % (self.ip, self.port)
 
+        self.set_language('pt_BR')
+
         # get songs from download_path
         self.get_available_songs()
 
@@ -183,7 +186,11 @@ class Karaoke:
             self.initialize_screen()
             self.render_splash_screen()
 
- 
+    def set_language(self, lang):
+        lang_translations = gettext.translation('messages', localedir='translations', languages=[lang])
+        lang_translations.install()
+        self._ = lang_translations.gettext
+
     # Other ip-getting methods are unreliable and sometimes return 127.0.0.1
     # https://stackoverflow.com/a/28950776
     def get_ip(self):
@@ -404,12 +411,15 @@ class Karaoke:
                     next_song = next_song[0:max_length] + "..."
                 next_user = self.queue[0]["user"]
                 font_next_song = pygame.font.SysFont(pygame.font.get_default_font(), 60)
+                # MSG: Up next song
+                up_next_txt = self._("Up next")
                 text = font_next_song.render(
-                    "Up next: %s" % (unidecode(next_song)), True, (0, 128, 0)
+                    f'{up_next_txt}: {unidecode(next_song)}', True, COLORS['green']
                 )
-                up_next = font_next_song.render("Up next:  " , True, (255, 255, 0))
+                up_next = font_next_song.render(f"{up_next_txt}:  " , True, COLORS['blue'])
                 font_user_name = pygame.font.SysFont(pygame.font.get_default_font(), 50)
-                user_name = font_user_name.render("Added by: %s " % next_user, True, (255, 120, 0))
+                add_by_txt = self._("Added by")
+                user_name = font_user_name.render(f"{add_by_txt}: {next_user} ", True, COLORS['white'])
                 x = self.width - text.get_width() - 10
                 y = 5
                 self.screen.blit(text, (x, y))

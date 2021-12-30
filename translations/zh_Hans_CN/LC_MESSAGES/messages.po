@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  1.1.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-25 18:31-0300\n"
+"POT-Creation-Date: 2021-12-30 02:59-0300\n"
 "PO-Revision-Date: 2021-12-07 23:35-0500\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -18,26 +18,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: app.py:82
-msgid "semitones"
-msgstr ""
-
 #. Message shown after logging in as admin successfully
-#: app.py:95
+#: app.py:94
 msgid "Admin mode granted!"
 msgstr "管理员模式开启"
 
 #. Message shown after failing to login as admin
-#: app.py:99
+#: app.py:98
 msgid "Incorrect admin password!"
 msgstr "管理员密码错误"
 
 #. Title of the files page.
 #. Navigation link for the page where the user can add existing songs to the
 #. queue.
-#: app.py:326 templates/base.html:158
+#: app.py:325 templates/base.html:158
 msgid "Browse"
 msgstr "浏览"
+
+#. Up next song
+#: karaoke.py:414
+msgid "Up next"
+msgstr ""
+
+#: karaoke.py:420
+msgid "Added by"
+msgstr ""
 
 #. Prompt when changing the current profile name.
 #: templates/base.html:80
@@ -144,76 +149,81 @@ msgstr "现在歌曲正在按日期排序"
 msgid "Sort by Alphabetical"
 msgstr "用字母排序"
 
+#. Label for display of how many semitones the song has been shifted.
+#: templates/home.html:4
+msgid "semitones"
+msgstr ""
+
 #. Message which shows in the "Now Playing" section when there is no song
 #. currently playing
-#: templates/home.html:30
+#: templates/home.html:32
 msgid "Nothing is playing right now."
 msgstr "没有正在播放的音乐"
 
 #. Title text for the icon marking the next person to sing.
-#: templates/home.html:38
+#: templates/home.html:40
 msgid "Next singer"
 msgstr "下一个歌手"
 
 #. Alternative text for the "Up next" section if no more songs are queued up.
-#: templates/home.html:42
+#: templates/home.html:43
 msgid "No song is queued."
 msgstr "没有下一首歌"
 
 #. Confirmation message when clicking a button to skip a track.
-#: templates/home.html:114
+#: templates/home.html:115
 msgid ""
 "Are you sure you want to skip this track? If you didn't add this song, "
 "ask permission first!"
 msgstr "你确定要跳过这首歌？"
 
 #. Header showing the currently playing song.
-#: templates/home.html:143
+#: templates/home.html:144
 msgid "Now Playing"
 msgstr "正在播放曲目"
 
 #. Title for the section displaying the next song to be played.
-#: templates/home.html:157
+#: templates/home.html:158
 msgid "Next Song"
 msgstr "下一首歌"
 
 #. Title of the box with controls such as pause and skip.
-#: templates/home.html:165
+#: templates/home.html:166
 msgid "Player Control"
 msgstr "播放器"
 
 #. Title attribute on the button to restart the current song.
-#: templates/home.html:168
+#: templates/home.html:169
 msgid "Restart Song"
 msgstr "重新开始"
 
 #. Title attribute on the button to play or pause the current song.
-#: templates/home.html:171
+#: templates/home.html:172
 msgid "Play/Pause"
 msgstr "播放/暂停"
 
 #. Title attribute on the button to skip to the next song.
-#: templates/home.html:174
+#: templates/home.html:175
 msgid "Stop Current Song"
 msgstr "停止并跳到下一首歌"
 
 #. Title attribute on the button to adjust volume down.
-#: templates/home.html:178
+#: templates/home.html:179
 msgid "Volume Down"
 msgstr "音量-"
 
 #. Title attribute on the button to adjust volume up.
-#: templates/home.html:182
+#: templates/home.html:183
 msgid "Volume Up"
 msgstr "音量+"
 
 #. Title of a control to change the key/pitch of the playing song.
-#: templates/home.html:193
+#: templates/home.html:194
 msgid "Change Key"
 msgstr "升降调"
 
 #. Label on the button to confirm the change in key/pitch of the playing song.
-#: templates/home.html:220
+#: templates/home.html:221
 msgid "Change"
 msgstr "确认更改声调"
 
@@ -529,5 +539,14 @@ msgid "Link:"
 msgstr "YouTube歌曲链接"
 
 #~ msgid " semitones"
+#~ msgstr ""
+
+#~ msgid "semitones"
+#~ msgstr ""
+
+#~ msgid "coconut"
+#~ msgstr ""
+
+#~ msgid "Up next:"
 #~ msgstr ""
 
