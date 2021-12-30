@@ -113,7 +113,7 @@ Install requirements from the pikaraoke directory:
 
 ```
 pip3 install -r requirements.txt
-pip3 install --upgrade youtube_dl
+pip3 install --upgrade yt_dlp
 ```
 
 #### Windows

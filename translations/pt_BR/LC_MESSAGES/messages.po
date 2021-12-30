@@ -38,7 +38,7 @@ msgstr "Procurar"
 #. Up next song
 #: karaoke.py:414
 msgid "Up next"
-msgstr "Proxima"
+msgstr "Próxima"
 
 #: karaoke.py:420
 msgid "Added by"
